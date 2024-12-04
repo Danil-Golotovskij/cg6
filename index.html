@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Filtering</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f3f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        #controlButtons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+    
+        button {
+            background-color: #6a0dad;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+    
+        button:hover {
+            background-color: #4a0082;
+        }
+    
+        button:active {
+            transform: scale(0.95);
+        }
+    
+        #urlInput {
+            width: 50vw;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #6a0dad;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    
+        #loadButton {
+            background-color: #6a0dad;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: 10px;
+        }
+    
+        #loadButton:hover {
+            background-color: #4a0082;
+        }
+    
+        #canvas {
+            width: 1000px;
+            height: 1000px;
+            max-height: 60vh;
+            border: 2px solid #6a0dad;
+            border-radius: 0px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+    
+        label {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #6a0dad;
+            font-weight: bold;
+        }
+    
+        input:focus {
+            outline: none;
+            border-color: #4a0082;
+            box-shadow: 0 0 5px #6a0dad;
+        }
+    </style>
+    
+
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <div id="controlButtons">
+        <button id="noiseButton">Добавить шум</button>
+        <button id="lineNoiseButton">Добавить линии</button>
+        <button id="uniformButton">Равномерный фильтр</button>
+        <button id="medianButton">Медианный фильтр</button>
+        <button id="sharpnessButton">Повышение резкости</button>
+        <button id="embossingButton">Тиснение</button>
+    </div>
+
+    <label for="urlInput" id="inputLabel">Image URL:</label>
+    <input type="text" id="urlInput">
+    
+    <button id="loadButton">Load</button>
+    <div></div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
